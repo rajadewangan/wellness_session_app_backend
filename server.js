@@ -5,7 +5,7 @@ import dotenv from 'dotenv';
 import { connectDB } from './config/db.js';
 import authRoutes from './routes/authRoutes.js';
 import sessionRoutes from './routes/sessionRoutes.js';
-import { verifyToken } from './middleware/auth.js';
+import { verifyToken } from './middlewares/auth.js';
 
 dotenv.config();
 
