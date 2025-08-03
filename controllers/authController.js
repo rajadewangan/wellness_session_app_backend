@@ -4,6 +4,7 @@ import User from '../models/User.js';
 
 export const register = async (req, res) => {
   const { email, password } = req.body;
+  console.log(email, password);
   const exists = await User.findOne({ email });
   if (exists) return res.status(400).json({ error: 'Email already in use' });
 

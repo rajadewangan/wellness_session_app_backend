@@ -1,11 +1,13 @@
 import Session from '../models/Session.js';
 
 export const getPublicSessions = async (req, res) => {
+  console.log("getPublicSessions called");
   const sessions = await Session.find({ status: 'published' });
   res.json(sessions);
 };
 
 export const getUserSessions = async (req, res) => {
+  console.log("getUserSessions called");
   const sessions = await Session.find({ user_id: req.user.id });
   res.json(sessions);
 };
@@ -17,6 +19,7 @@ export const getSingleSession = async (req, res) => {
 };
 
 export const saveOrUpdateDraft = async (req, res) => {
+  console.log("saveOrUpdateDraft called");
   const { id, title, tags, json_file_url } = req.body;
 
   if (id) {

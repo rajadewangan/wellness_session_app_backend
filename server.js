@@ -10,7 +10,11 @@ import { verifyToken } from './middlewares/auth.js';
 dotenv.config();
 
 const app = express();
-app.use(cors());
+app.use(cors({
+  origin: 'https://wellness-session-app-frontend-1.onrender.com',
+  credentials: true
+}));
+
 app.use(express.json());
 
 connectDB();
